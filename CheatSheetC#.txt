@@ -1,0 +1,199 @@
+SWITCH
+int Sco=0; // Sco(re) 
+Console.Write("Mennyi a pontszama: "); //kiiras, .Write akkor annak a sornak a vegen lesz
+Sco=Convert.ToInt32(Console.ReadLine()); //..ez a bekeres
+switch(Sco) // Sco erteket fogjuk nezni
+{
+case 0: // hogyha 0
+case 1: // vagy 1
+case 2: // vagy 2
+   Console.WriteLine("{0} --elegtelen",Sco); // lefut ez
+   break; // itt vege, ha nincs "break" tovabb megy a program es nem lesz jo
+case 3: // hogyha 3
+case 4: // vagy 4
+case 5: // vagy 5
+   Console.WriteLine("{0} --elegseges",Sco); // lefut ez
+   break; // vege, es ujra...
+case 6:
+case 7:
+   Console.WriteLine("{0} --kozepes",Sco);
+   break;
+case 8:
+case 9:
+   Console.WriteLine("{0} --Jo",Sco);
+   break;
+case 10:
+   Console.WriteLine("{0} --Kivalo",Sco);
+   break;
+default:
+   Console.WriteLine("Rossz erteket adott meg!");
+   break;
+}
+----------------
+BASIC FOR LOOP
+int i; // nem kell megadni mar itt a nullat csak a valtozo kell
+for(i=0;i<15;i++) // 0-14-ig fog menni, i++ == "i=i+1"
+{
+  Console.WriteLine("{0}. valami szoveg",i);
+}
+----------------
+RANDOM SZAM GENERALAS + DO WHILE
+int num=0, random=0; // valtozo a ciklushoz meg a random szamhoz
+Random RanGen = new Random(); // random szam "modul" by: golem
+do // *csinal*, megadjuk hogy mit csinaljon a program
+{
+random = RanGen.Next(10,51); // "random" valtozo erteke a random szam lesz 10 es 50 kozott (10 is es 50 is beletartozik)
+Console.WriteLine("Random szam: {0}",random);
+num++; // num erteket mindig novelni kell 1-el hogy ne legyen vegtelen a ciklus
+}
+while(num<17); // addig csinalja ameddig "num" kisebb mint 17
+------------------
+WHILE CIKLUS + IF
+int num=100, db=0; // num valtozo hogy honnan induljon a while ciklus, db valtozo a 2-vel oszthato es 3 vagy 7-el oszthato szamokhoz
+while(num<501) // fut ameddig "num" kisebb mint 501 
+{
+  if(num%2==0 && (num%3==0 || num%7==0)) // basic if, "&&"=="és"  "||"=="vagy"
+    {
+      Console.WriteLine("A szam: {0}, negyzetgyoke: {1}",num,Math.Sqrt(num))
+      db++; // hogyha a szam a felteleknek megfelel "db" valtozo erteke no
+    }
+num++; // if-en kivul!!! noveljuk "num" erteket hogy ne legyen vegtelen a program
+}
+Console.WriteLine("Paros 3al vagy 7el oszthato szamok 100 es 500 kozott(db): {0}",db); // magatol erthetodo ^v^
+------------------
+BASIC INT - DOUBLE OSZTAS
+int num1 = 0, num2 = 0;
+Console.Write("Kerem az elso szamot: ");
+num1 = (int)Convert.ToDouble(Console.ReadLine()); // mivel int-et kertunk be kell a (int) hogy atrakjuk egesz szamra es akkor tudunk normalisan osztani
+Console.Write("Kerem a masodik szamot: ");
+num2 = (int)Convert.ToDouble(Console.ReadLine());
+if(num2 == 0)
+{
+  Console.WriteLine("0 val nem lehet osztani!!!");
+}
+else
+{
+  Console.WriteLine("Az osztas eredmenye: {0:0.00}", num1/num2); // {0:0.00} arra van hogy 2 tizedes jegyre kerekitsen
+}
+------------------
+NEGATIV SZAM GENERALAS 
+      int negativveletlenszam;
+      negativveletlenszam = veletlen.Next(100)-50;
+      Console.WriteLine("A generalt szam -50 es 50 kozott:\n {0}",negativveletlenszam);
+------------------ 
+VALOS SZAM GENERALAS
+      double valosveletlen;
+      valosveletlen = veletlen.NextDouble()*100-50; // *100 [0-100]
+      Console.WriteLine("A generalt VALOS szam:\n -50 es 50 kozott: {0}",valosveletlen);
+------------------
+FOR CIKLUS CSOKKENO
+      int f;
+      for(f=100; f>=0; f=f-10)
+      {
+        Console.Write("{0}\n",f);
+      }
+------------------
+TOMB LETREHOZAS ES FELTOLTES
+int num = 0;
+int[] tomb = new int[20];
+Random RandGen = new Random(); 
+for(num=0;num<20;num++)
+{
+  tomb[num] = RandGen.Next(10,51); // Mindig +1 hogy a tartomany pontos legyen 50ig generalas 51-et kell irni *lore*
+}
+------------------
+BASIC TOMB CUCCOK
+Console.WriteLine("A tomb elemszama: {0}",tomb.Length);
+Console.WriteLine("A tomb elso eleme: {0}",tomb.First());
+Console.WriteLine("A tomb utolso eleme: {0}",tomb.Last());
+Console.WriteLine("A tomb elemeindek atlaga: {0}",tomb.Average());
+Console.WriteLine("A tomb dimenzioinak szama: {0}",tomb.Rank); // tf
+------------------
+NEM TUDOM MI A FRANC DE TOMB CUCCOK
+            Console.WriteLine("A tomb 2-ik indexu elemetol a 3 elemnek a visszaallitasa");
+            Array.Clear(tomb,2,3);
+            for(num=0;num<tomb.Length;num++)
+            {
+                Console.WriteLine("A tomb eleme: {0}",tomb[num]);
+            }
+            Console.WriteLine("Az a tomb atmasolasa a b tombbe, megadott elemszammal");
+            int[] b = new int[20];
+            Array.Copy(tomb,b,10);
+            for(num=0;num<b.Length;num++)
+            {
+                Console.WriteLine("A tomb eleme: {0}",b[num]);
+            }
+            Console.WriteLine("Az a tomb atmasolasa a c tombbe, adott forras indextol, adott cel indextol, adott elemszammal");
+            int[] c = new int[20];
+            Array.Copy(tomb,2,c,1,5);
+            for(num=0;num<c.Length;num++)
+            {
+                Console.WriteLine("A tomb eleme: {0}",c[num]);
+            }
+            Console.WriteLine("Az a tombben a 10-es keresese: {0}",Array.IndexOf(tomb,10));
+            Console.WriteLine("Az a tombben a 10-es keresese hatulrol: {0}",Array.LastIndexOf(tomb,10));
+            Console.WriteLine("Az a tomb megforditasa:");
+            Array.Reverse(tomb);
+            for(num=0;num<tomb.Length;num++)
+            {
+                Console.WriteLine("A tomb megforditva: {0}",tomb[num]);
+            }
+            Console.WriteLine("A tomb rendezese:");
+            Array.Sort(tomb);
+            for(num=0;num<tomb.Length;num++)
+            {
+                Console.WriteLine("A tomb eleme: {0}",tomb[num]);
+            }
+            Console.WriteLine("Az a tomb legnagyobb eleme: {0}",tomb.Max());
+            Console.WriteLine("Az a tomb legkisebb eleme: {0}",tomb.Min());
+            Console.WriteLine("Az a tomb elemainek osszege: {0}",tomb.Sum());
+
+            string[] nap = new string[] {"hetfo","kedd","szerda","csutortok","pentek","szombat","vasarnap"};
+            Console.WriteLine("A nap tomb elemei:");
+            for(num=0;num<7;num++)
+            {
+                Console.WriteLine(nap[num]);
+            }
+
+            string[] honap = new string[] {"januar","februar","marcius","aprilis","majus","junius","julius","augusztus","szeptember","oktober","november","december"};
+            Console.WriteLine("A honap tomb elemei:");
+            for(num=0;num<12;num++)
+            {
+                Console.WriteLine(honap[num]);
+            }
+            Console.WriteLine("A 0. indexu honap nevet: {0}",honap.First());
+            Console.WriteLine("Az ev 5. honapja: {0}",honap[4]);
+            Console.WriteLine("November honap tombelem: {0}",Array.IndexOf(honap,"november"));
+            
+            Console.Write("Adjon meg egy szamot 1-12: ");
+            int Sznam = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(honap[Sznam-1]);
+------------------
+WHILE CIKLUS MAS ERTEKEKKEL
+Kettovel novekvo
+int i=18;
+while(i<=52)
+{
+  Console.WriteLine("While ciklus lore {0}",i);
+  i=i+2;
+}
+Ottel csokkeno
+int i=105;
+while(i>=35)
+{
+  Console.WriteLine("While ciklus csokkeno {0}",i);
+  i=i-5;
+}
+------------------
+MATEK FUGGVENYEK
+int i=1;
+while(i<=30)
+{
+  Console.WriteLine("Szam:{0}, negyzete: {1}, 5. hatvanya: {2}, negyzetgyoke: {3}",i,Math.Pow(i,2),Math.Pow(i,5),Math.Sqrt(i));
+  i++;
+}
+------------------
+TOMB FELTOLTES MAS MODON
+int[] osztaly = new int[11] {6,5,8,7,10,3,1,2,0,4,9};
+string[] nevek = new string[11] {"Andras","Bela","Cecilia","Dora","Elemer","Fanni","Gloria","Hedvig","Ilona","Jozsef","Katalin"};
+

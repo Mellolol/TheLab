@@ -1,0 +1,111 @@
+BEKERES
+var szam = prompt('Adj meg egy szamot: ');
+------------------
+MATEK FUGGVENYEK
+document.write('A pi erteke: ',Math.PI,'<br>');
+document.write('Az E erteke: ',Math.E,'<br>');
+document.write('5 abszolut erteke: ',Math.abs(5),'<br>');
+document.write('-5 abszolut erteke: ',Math.abs(-5),'<br>');
+document.write('1.6 egeszitesenek erteke: ',Math.floor(1.6),'<br>');
+document.write('1.6 felfele egeszitett erteke: ',Math.ceil(1.6),'<br>');
+document.write('Az E a 4-ik hatvanyon: ',Math.exp(4),'<br>');
+document.write('1,2,10,3,4 kozul a legnagyobb: ',Math.max(1,2,10,3,4),'<br>');
+document.write('10,9,1,8,7 kozul a legkisebb: ',Math.min(10,9,1,8,7),'<br>');
+document.write('2 a 6. hatvanyon: ',Math.pow(2,6),'<br>');
+document.write('Veletlenszam generalas 0 es 1 kozott, az 1 nem megengedett: ',Math.random(),' <br>');
+document.write('Veletlenszam generalas 1 es 10 kozott: ',Math.floor(Math.random()*10) + 1,'<br>');
+document.write('Veletlenszam generalas 1 es 100 kozott: ',Math.floor(Math.random()*100) + 1,'<br>');
+document.write('11.4 kerekitve: ',Math.round(11.4),'<br>');
+document.write('11.44444 2 tizedesre kerekitve: ',Math.round(11.44444*100)/100,'<br>');
+document.write('16 gyoke: ',Math.sqrt(16),'<br>');
+document.write('16.2 gyoke: ',Math.sqrt(16.2),'<br>');
+------------------
+STRING MUVELETEK
+var str1 = 'Almaspite';
+var str2 = 'Korte';
+document.write("A szoveg ",str1.length," karakterbol all<br>");
+if(str1 > str2) { document.write("nagyobb ",str1,"<br>")};
+if(str1 < str2) { document.write("nagyobb ",str2,"<br>")};
+if(str1 == str2) { document.write("a == b<br>")};
+// string kiirasa nagybetus alakban
+document.write(str1.toUpperCase(),"<br>");
+// string kiirasa kisbetus alakban
+document.write(str2.toLowerCase(),"<br>");
+// string reszlet kivagasa - elso parameter:kezdo pozicio, masodik:hossz
+document.write(str1.substr(5,4),"<br>");
+// kereses a stringben(elso elofordulas) -ha nincs -1
+document.write(str1.indexOf('pite'),"<br>");
+// kereses a stringben(utolso elofordulas) -visszafele keres
+document.write(str1.lastIndexOf('p'),"<br>");
+document.write(str2.charAt(1),"<br>");
+var str1 = "";
+str1 = prompt("Ird be a neved: ");
+document.write("Szia ",str1,"<br>");
+document.write("A neved ",str1.length," karakterbol all<br>");
+for(i=0;i<str1.length;i++)
+{
+  document.write(str1.charAt(i),"<br>"); // naon japanosan lefele irva lesz a nev
+}
+------------------
+SWITCH PONTSZAMOS FELADAT
+var a = prompt('Adjon meg egy pontszamot 1 es 10 kozott: ');
+switch (a) {
+  case '1':
+  case '2':
+   document.write('A dolgozat *ELEGTELEN* mert ',a,' pont lett!');
+   break;
+  case '3':
+  case '4':
+    document.write('A dolgozat *ELEGSEGES* mert ',a,' pont lett!');
+    break;
+  case '5':
+  case '6':
+    document.write('A dolgozat *KOZEPES* mert ',a,' pont lett!');
+    break;
+  case '7':
+  case '8':
+    document.write('A dolgozat *JO* mert ',a,' pont lett!');
+    break;
+  case '9':
+  case '10':
+    document.write('A dolgozat *KIVALO* mert ',a,' pont lett!');
+    break;
+  default:
+    document.write('Nem megfelelo pontszam!');
+}
+------------------
+TOMB ALAPOK
+var num = new Array(); // tomb letrehozas
+--
+for(i=0; i<10; i++)
+{
+  num[i]=Math.floor(Math.random()*20+1); // tomb feltoltes
+}
+--
+document.write("A tomb elemei: ");
+for(i=0; i<num.length;i++)
+{
+  document.write(num[i],' '); // tomb kiiratas
+}
+document.write('<br>');
+--
+document.write("A tomb elemei REVERSEÜ: ");
+i=14;
+while(i>=0)
+{
+  document.write(num[i],' ');
+  i--;
+}
+--
+var i = 0;
+var tomb = new Array('cica','kutya','hal','horcsog');
+document.write("A tomb elso eleme: ",tomb[0],"<br>");
+document.write("A tomb utolso eleme: ",tomb[tomb.length-1],'<br>');
+document.write("A tomb elemszama: ",tomb.length,'<br>');
+tomb.push('eger'); // Uj dolog hozzaadasa a tombhoz a vegere 
+tomb.unshift('pok'); // Elso helyre adunk uj dolgot
+tomb.pop(); // Eltavolitja az utolso helyen levo dolgot
+tomb.shift(); // Eltavolitja az elso helyen levo dolgot
+tomb.splice(1,1); // Atirunk bizonyos helyen 1 vagy tobb dolgot
+document.write("A keresett elem indexe: ",tomb.indexOf('hal'),'<br>');
+document.write("A keresett elem indexe: ",tomb.lastIndexOf('hal'),'<br>');
