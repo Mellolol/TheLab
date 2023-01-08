@@ -1,0 +1,27 @@
+-To build the program (req: new folder!)
+
+dotnet new console
+dotnet build --output ./build_output
+dotnet ./build_output/my_app.dll
+
+-Template for basic C#
+
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyApp // Note:depends on the project name.
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+
