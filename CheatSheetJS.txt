@@ -109,3 +109,18 @@ tomb.shift(); // Eltavolitja az elso helyen levo dolgot
 tomb.splice(1,1); // Atirunk bizonyos helyen 1 vagy tobb dolgot
 document.write("A keresett elem indexe: ",tomb.indexOf('hal'),'<br>');
 document.write("A keresett elem indexe: ",tomb.lastIndexOf('hal'),'<br>');
+-------------------
+STRING BETU EDITELES or sth
+var name = prompt("Mi a keresztneved");
+document.write(name.charAt(0).toUpperCase(),name.substr(1),'<br>');
+
+var name = prompt("Mi a teljes neved");
+//A keresztnevvel koszon
+var i = name.lastIndexOf(' ')+1;
+document.write("Szia ",name.substr(i),"!<br>");
+
+//Kiirja a vezeteknevet nagybetuvel
+document.write(name.substr(0,i).toUpperCase(),"<br>");
+
+//A vezeteknev es a keresztnev is nagybetuvel fog kezdodni
+document.write(name.charAt(0).toUpperCase(),name.substr(1,i-1),name.charAt(i).toUpperCase(),name.substr(i+1),"<br>");
