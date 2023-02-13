@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="Form.js"></script>
+    <link rel="stylesheet" href="alapok.css">
+</head>
+<body>
+<form>
+    <label>Feszultseg(V): </label><br>
+    <input id="fesz"><br>
+    <label>Aramerosseg(A): </label><br>
+    <input id="aram"><br>
+    <input type="button" value="Ellenallas" onclick="ellen()">
+    <div>
+        <p>A szamitas alapja: </p>
+        <ul>
+            <li>Feszultseg: <span id="fesze"></span> V </li>
+            <li>Aramerosseg: <span id="arame"></span> A </li>
+        </ul>
+        <h2>Az ellenallas: <span id="ellene">?</span> Ohm </h2>
+    </div>
+</form>
+<form>
+    <label> Hosszu oldal (m):</label><br>
+    <input id="hossz"><br>
+    <label> Rovid oldal (m):</label><br>
+    <input id="rovid"><br>
+    <input type="button" value="Szamol" onclick="szamol()">
+    <div>
+        <p>A szamolas alapjai:</p>
+        <ul>
+            <li>Hosszu oldal: <span id="hossze">?</span>m</li>
+            <li>Rovid oldal: <span id="rovide">?</span>m</li>
+        </ul>
+        <h2>A terulet: <span id="terulete">?</span>m<sup>2</sup></h2>
+        <h2>A kerulet: <span id="kerulete">?</span>m</h2>
+    </div>
+</form>
+</body>
+</html>
