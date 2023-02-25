@@ -1,0 +1,83 @@
+#+title: Progi Tetelek
+
+* Osszegzes tetele:
+Egy sorozat elemeit adja ossze, adott egy N elemu, szamokat tartalmazo tomb. Hatarozzuk meg a tomb elemeinek osszeget.
+- Algoritmus:
+    osszeg = 0
+    ciklus i = kezdoindextol vegsoindexig
+        osszeg = osszeg + tomb[i]
+    ciklus vege                             -FOR-
+    kiirjuk az osszeget
+
+- Magyarazat:
+  Az osszeget az "osszeg" valtozoban taroljuk v. erteket 0-uk, majd a ciklusban egyesevel hozzaadjuk az elemeket.
+  Kiirjuk az osszeg valtozot.
+
+- Pelda:
+  Testsuly osszeg
+  Testmagassag osszeg
+  Atlag szamitashoz
+
+* Eldontes tetele:
+Adott egy N elemu sorozat es egy sorozatok elemein ertelmezett T tulajdonsag. Azt kell eldontenunk hogy letezik a meghatarozott tulajdonsagu elem a sorozatban, de nincs sziksegunk az indexere.
+- Algoritmus:
+    i = kezdoindex
+    ciklus amig i <= vegsoindex ES tomb[i] != T
+        i=i+1
+    ciklus vege
+    van = (i <= vegsoindex)
+
+- Algoritmus 2:
+    minden elem T
+    i = kezdoindex
+    ciklus amig i <= vegsoindex ES tomb[i] = T
+        i=i+1
+    ciklus vege
+    mind = (i > vegsoindex)
+
+- Magyarazat:
+    Elemek vizsalatat az elso elemtol kezdjuk es lepegetunk sorban az elemeken mig el nem erjuk a tomb veget, vagy nem talaltunk T tulajdonsagu elemet. Ha visszateresi ertek akkor igaz, ha a ciklus v. erteke az <= mint a vegsoindex.
+
+- Pelda:
+  van-e pozitiv ertek a tombben
+  megadott nev szerepel-e a listaban
+  van-e fiu a tanulok kozott
+  van-e paros szam
+
+* Kivalasztas tetele:
+Adott egy N elemu sorozat es egy a sorozat elemein ertelmezett T tulajdonsag. Azt is tudjuk hogy a sorozatban van legalabb 1 T tulajdonsagu elem. A feladat ezen elem sorszamanak meghatarozasa.
+- Algoritmus:
+    i = kezdoindex
+    ciklus amig tomb[i] != T
+        i=i+1
+    ciklus vege
+    sorszam = i
+    KI: sorszam
+
+- Magyarazat:
+    Ciklussal vegig megyunk a tomb elemein, de nincs szukseg arra hogy megvizsgaljuk hogy van-e meg elem a tombben. Ha megtalatuk a T tulajdonsagu elemet, a ciklus megall, es mar csak az elem indexet kell kiiratnunk.
+
+- Pelda:
+    hanyadik helyen van paros szam
+    hanyadik helyen szerepel a keresett nev a tombben
+    hanyadik helyen szerepel 100kg-os ember a tombben
+
+* Megszamlalas tetele:
+Adott egy N elemu sorozat es egy a sorozat elemein ertelmezett T tulajdonsag. A feladat a T tulajdonsaggal rendelkezo elemek megszamolasa.
+- Algoritmus:
+    letre kell hozni egy DB valtozot
+    ciklus kezdoindextol vegsoindexig
+        ha tomb[i] adott tulajdonsagu
+            DB=DB+1
+        elagazas vege
+    ciklus vege
+    KI: DB
+
+- Magyarazat:
+    A szamlalasra bevezetjuk a DB valtozot amit eloszor 0-zunk. Ciklussal megvizsgaljuk a tomb elemeit, ha talalunk T tulajdonsagu elemet akkor megnoveljuk a DB v. erteket. A ciklus utan kiiratjuk a DB valtozot.
+
+- Pelda:
+    hany negativ szam van a tombben
+    hany fiu van a tombben
+    hany 160cm-nel magasabb van a tombben
+    hany barna szamu van a tombben
