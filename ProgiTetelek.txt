@@ -39,10 +39,10 @@ Adott egy N elemu sorozat es egy a sorozat elemein ertelmezett T tulajdonsag. Az
     Elemek vizsgalatat az elso elemtol kezdjuk es lepegetunk sorban az elemeken mig el nem erjuk a tomb veget, vagy nem talaltunk T tulajdonsagu elemet. A visszateresi ertek akkor igaz, ha a ciklus v. erteke az <= mint a vegsoindex.
 
 - Pelda:
-  van-e pozitiv ertek a tombben
-  megadott nev szerepel-e a listaban
-  van-e fiu a tanulok kozott
-  van-e paros szam
+    van-e pozitiv ertek a tombben
+    megadott nev szerepel-e a listaban
+    van-e fiu a tanulok kozott
+    van-e paros szam
 
 * Kivalasztas tetele:
 Adott egy N elemu sorozat es egy a sorozat elemein ertelmezett T tulajdonsag. Azt is tudjuk hogy a sorozatban van legalabb 1 T tulajdonsagu elem. A feladat ezen elem sorszamanak meghatarozasa.
@@ -66,6 +66,7 @@ Adott egy N elemu sorozat es egy a sorozat elemein ertelmezett T tulajdonsag. Az
 Adott egy N elemu sorozat es egy a sorozat elemein ertelmezett T tulajdonsag. A feladat a T tulajdonsaggal rendelkezo elemek megszamolasa.
 - Algoritmus:
     letre kell hozni egy DB valtozot
+    i = kezdoindex
     ciklus kezdoindextol vegsoindexig
         ha tomb[i] adott tulajdonsagu
             DB=DB+1
@@ -80,7 +81,7 @@ Adott egy N elemu sorozat es egy a sorozat elemein ertelmezett T tulajdonsag. A 
     hany negativ szam van a tombben
     hany fiu van a tombben
     hany 160cm-nel magasabb van a tombben
-    hany barna szamu van a tombben
+    hany barna szemu van a tombben
 
 * Maximum kivalasztas tetele:
 Adott egy N elemu sorozat, a feladat a sorozat legnagyobb elemenek kivalasztasa.
