@@ -19,7 +19,7 @@ Egy sorozat elemeit adja ossze, adott egy N elemu, szamokat tartalmazo tomb. Hat
   Atlag szamitashoz
 
 * Eldontes tetele:
-Adott egy N elemu sorozat es egy sorozatok elemein ertelmezett T tulajdonsag. Azt kell eldontenunk hogy letezik a meghatarozott tulajdonsagu elem a sorozatban, de nincs sziksegunk az indexere.
+Adott egy N elemu sorozat es egy a sorozat elemein ertelmezett T tulajdonsag. Azt kell eldontenunk hogy letezik a meghatarozott tulajdonsagu elem a sorozatban, de nincs szuksegunk az indexere.
 - Algoritmus:
     i = kezdoindex
     ciklus amig i <= vegsoindex ES tomb[i] != T
@@ -36,7 +36,7 @@ Adott egy N elemu sorozat es egy sorozatok elemein ertelmezett T tulajdonsag. Az
     mind = (i > vegsoindex)
 
 - Magyarazat:
-    Elemek vizsalatat az elso elemtol kezdjuk es lepegetunk sorban az elemeken mig el nem erjuk a tomb veget, vagy nem talaltunk T tulajdonsagu elemet. Ha visszateresi ertek akkor igaz, ha a ciklus v. erteke az <= mint a vegsoindex.
+    Elemek vizsgalatat az elso elemtol kezdjuk es lepegetunk sorban az elemeken mig el nem erjuk a tomb veget, vagy nem talaltunk T tulajdonsagu elemet. A visszateresi ertek akkor igaz, ha a ciklus v. erteke az <= mint a vegsoindex.
 
 - Pelda:
   van-e pozitiv ertek a tombben
@@ -81,3 +81,49 @@ Adott egy N elemu sorozat es egy a sorozat elemein ertelmezett T tulajdonsag. A 
     hany fiu van a tombben
     hany 160cm-nel magasabb van a tombben
     hany barna szamu van a tombben
+
+* Maximum kivalasztas tetele:
+Adott egy N elemu sorozat, a feladat a sorozat legnagyobb elemenek kivalasztasa.
+- Algoritmus:
+    legnagyobb elem = kezdoindex
+    legnagyobb ertek = tomb[kezdoindex]
+    ciklus kezdoindex+1-tol vegsoindexig
+        ha tomb[i] > legnagyobb ertek akkor
+            legnagyobb elem = i
+            legnagyobb ertek = tomb[i]
+        elagazas vege
+    ciklus vege
+    kiiratas: legnagyobb elem, legnagyobb ertek
+
+- Magyarazat:
+    Eloszor az elso elemet tekintjuk maximumnak, utana a masodik elemtol kezdve osszehasonlitjuk a tomb elemeit az eddig talalt legnagyobb ertekkel, ha nagyobbat talalunk akkor lecsereljuk vele az addigi legnagyobb erteket, ha vegig ertunk a tombon kiiratjuk a legnagyobb elem erteket es indexet. Tobb maximalis erteku elem eseten algoritmusunk az eloszor megtalalt elem indext szolgaltatja. A tomb elmek minimumat hasonlo modon hatarozzuk meg, csak a feltetelnel kell a relaciot megforditanunk.
+
+- Pelda:
+    magassag - legmagasabb kivalasztasa
+    homersekletek kozul a legnagyobb kivalasztasa
+    testsulyokbol a legnagyobb kivalasztasa
+
+* Linearis kereses:
+Adott egy N elemu sorozat es egy a sorozat elemein ertelmezett T tulajdonsag. Azt kell eldontenunk hogy van-e a sorozatban T tulajdonsagu elem es ha van akkor meg kell adnunk az elemet es a sorszamat (eldontes + kivalasztas).
+- Algoritmus:
+    i = kezdoindex
+    ciklus amig i <= vegsoindex es tomb[i] != T
+        i=i+1
+    ciklus vege
+    VAN = (i <= vegsoindex)
+    ha VAN akkor
+        melyik = i
+    elagazas vege
+    kiiratas: tomb[melyik], melyik
+
+- Magyarazat:
+    Az elemek vizsgalatat az elso elemtol kezdjuk es lepegetunk sorba az elemeken, amig el nem erjuk a tomb veget, vagy nem talaltunk T tulajdonsagu elemet. Ha nem ertuk el a tomb veget akkor talaltunk T tulajdonsagu elemet ilyenkor az elemet illetve az elem indexet adjuk vissza, egyeb esetben hamis logikai ertekkel ter vissza az algoritmus.
+                                                                        |
+                                                                        v
+    Linearis kereses soran egymas utan vizsgalja a tomb elemeit az algoritmus igy a vegrehajtasi ido a tomb elemek szamaval aranyos. Ha a tomb tobb T tulajdonsagu elemmel rendelkezik akkor a legkisebb indexut hatarozza meg kozuluk.
+
+- Pelda:
+    megadott nevu diak szerepel-e a tombben
+    melyik diak magasabb egy megadott erteknel
+    kinek kisebb a testsulya
+    melyik homerseklet nagyobb mint 30*C
