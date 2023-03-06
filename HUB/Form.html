@@ -67,5 +67,28 @@
 <h2>Az ossz ar: <span id="are">?</span></h2>
 </div>
 </form>
+
+<form>
+<h2>Teglalap</h2>
+<label>Hosszu oldal (m):</label>
+<input id="a"><br>
+<label>Rovid oldal (m):</label>
+<input id="b"><br>
+<h2>Mit szeretne szamolni?</h2>
+<label>Kerulet:</label>
+<input type="checkbox" name="teglalap" id="ker"><br>
+<label>Terulet:</label>
+<input type="checkbox" name="teglalap" id="ter"><br>
+<input type="button" value="Számol" onclick="szamol()">
+<div>
+<p>A szamitas alapja:</p>
+<ul>
+<li>Hosszu oldal: <span id="ae"></span> m </li>
+<li>Rovid oldal: <span id="be"></span> m </li>
+</ul>
+<h2>A kerulet: <span id="kere"></span> m </h2>
+<h2>A terulet: <span id="tere"></span> m<sup>2</sup></h2>
+</div>
+</form>
 </body>
 </html>
