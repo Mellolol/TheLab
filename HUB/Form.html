@@ -24,6 +24,7 @@
         <h2>Az ellenallas: <span id="ellene">?</span> Ohm </h2>
     </div>
 </form>
+
 <form>
     <label> Hosszu oldal (m):</label><br>
     <input id="hossz"><br>
@@ -39,6 +40,32 @@
         <h2>A terulet: <span id="terulete">?</span>m<sup>2</sup></h2>
         <h2>A kerulet: <span id="kerulete">?</span>m</h2>
     </div>
+</form>
+
+<form>
+<label>Palackok szama (db): </label>
+<input type="number" id="palack" min="0" max="6" value="0"><br>
+<label>Rekeszek szama (db):</label>
+<input type="number" id="rekesz" min="0" max="10" value="0"><br>
+<label>Asvanyvizek:</label>
+<select id="asvanyviz">
+<option value="60">Apenta</option>
+<option value="65">Aquarius</option>
+<option value="70">Balfi</option>
+<option value="120" selected>NaturAqua</option>
+<option value="80">Pannon-aqua</option>
+<option value="90">Theodora Kekuti</option>
+<option value="110">Vitaqua</option>
+</select><br>
+<input type="button" value="Ossz ar" onclick="ar()">
+<div>
+<p>Az arazas alapja:</p>
+<ul>
+<li>Palackok szama: <span id="palacke"></span></li>
+<li>Rekeszek szama: <span id="rekesze"></span></li>
+</ul>
+<h2>Az ossz ar: <span id="are">?</span></h2>
+</div>
 </form>
 </body>
 </html>

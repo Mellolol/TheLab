@@ -10,7 +10,6 @@ document.getElementById('arame').innerHTML = aramerosseg;
 document.getElementById('ellene').innerHTML = ellenallas;
 }
 function szamol(){
-// Urlap adatok
 var hossz=document.getElementById('hossz').value;
 var rovid=document.getElementById('rovid').value;
 // Szamitas
@@ -21,4 +20,15 @@ document.getElementById('hossze').innerHTML = hossz;
 document.getElementById('rovide').innerHTML = rovid;
 document.getElementById('terulete').innerHTML = terulet;
 document.getElementById('kerulete').innerHTML = kerulet;
+}
+function ar(){
+const palack=document.getElementById('palack').value;
+const rekesz=document.getElementById('rekesz').value;
+const asvanyviz=document.getElementById('asvanyviz').value;
+// Szamitasok
+let ar = (rekesz*6+palack*1)*asvanyviz;
+// Megjelenites
+document.getElementById('palacke').innerHTML = palack;
+document.getElementById('rekesze').innerHTML = rekesz;
+document.getElementById('are').innerHTML = ar;
 }
