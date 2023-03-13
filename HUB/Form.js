@@ -32,3 +32,19 @@ document.getElementById('palacke').innerHTML = palack;
 document.getElementById('rekesze').innerHTML = rekesz;
 document.getElementById('are').innerHTML = ar;
 }
+function szamolas(){
+var aoldal=document.getElementById('a').value;
+var boldal=document.getElementById('b').value;
+
+var kerulet=(aoldal*1+boldal*1)*2;
+var terulet=aoldal*boldal;
+
+document.getElementById('ae').innerHTML = aoldal;
+document.getElementById('be').innerHTML = boldal;
+document.getElementById('kere').innerHTML = 0;
+if (document.getElementById('ker').checked)
+document.getElementById('kere').innerHTML = kerulet;
+document.getElementById('tere').innerHTML = 0;
+if (document.getElementById('ter').checked)
+document.getElementById('tere').innerHTML = terulet;
+}
